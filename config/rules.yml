@@ -1,0 +1,11 @@
+rules:
+  scan_detection:
+    enabled: true
+    alert_threshold: 50
+    files:
+      - tcp-ip.log
+  rdp_brute_force:
+    enabled: true
+    alert_threshold: 6
+    files:
+    - "rdp_core_ts.log"

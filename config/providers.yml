@@ -1,0 +1,35 @@
+providers:
+  TCIP-IP:
+    name: Microsoft-Windows-TCPIP
+    events:
+      - 1017
+      - 1184
+      - 1044
+      - 1214
+      - 1038
+    fields:
+      - "ActivityID"
+      - "LocalAddress"
+      - "RemoteAddress"
+      - "LocalSockAddr"
+      - "RemoteSockAddr"
+    logFile: "tcp-ip.log"
+  RDP_Session_Hijack:
+    name: Microsoft-Windows-TerminalServices-RemoteConnectionManager
+    events:
+      - 1149
+    fields:
+      - "Param1"
+      - "Param2"
+      - "Param3"
+    logFile: "rdp.log"
+  RDP_Brute_Force:
+    name: Microsoft-Windows-RemoteDesktopServices-RdpCoreTS
+    events:
+      - 131
+      - 103
+    fields:
+      - "ReasonCode"
+      - "ClientIP"
+      - "ActivityID"
+    logFile: "rdp_core_ts.log"
